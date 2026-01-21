@@ -9,6 +9,30 @@
 
 <body>
   <p><a href="index.html">Go back</a></p>
-<h1 class="title">Classic pagination by page</h1></body>
+
+<h1 class="title">Classic pagination by page</h1>
+
+<p class="info-text info-text">
+  <strong>Классическая постраничная пагинация — </strong> это подход, при котором внизу страницы
+  отображаются элементы управления с номерами страниц
+  (1, 2, 3, …), а пользователь самостоятельно выбирает нужную страницу.<br><br>
+
+  При клике на номер страницы:
+  <br>
+  — в запрос передаётся выбранный номер страницы;<br>
+  — текущий список данных очищается;<br>
+  — загружается и отображается новый набор данных, соответствующий выбранной странице.<br><br>
+
+  Активная страница визуально выделяется, а кнопки перехода могут дополняться
+  элементами <strong>Next</strong> / <strong>Prev</strong> для удобной навигации.
+</p>
+
+    <ul class="characters_list characters_list-js list"></ul>
+
+
+<script type="module" src="./src/pages/classicPagination.js"></script>
+</body>
+
+
 
 </html>

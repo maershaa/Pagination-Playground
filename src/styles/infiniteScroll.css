@@ -1,0 +1,89 @@
+.title{
+ color: rgb(10, 50, 150);
+ text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.info-text {
+  text-align: center;
+  max-width: 90%; 
+  background: linear-gradient(135deg, rgba(220, 235, 255, 0.8), rgba(240, 248, 255, 0.9));
+  border-left: 4px solid rgb(0, 102, 204); 
+  padding: 16px 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  color: rgb(14, 24, 109);
+  font-size: 16px;
+  line-height: 1.6;
+  box-shadow: 0 4px 12px rgba(0, 0, 100, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-text strong {
+  color: rgb(0, 102, 204); 
+}
+
+.info-text:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 100, 0.2);
+}
+
+
+.characters_list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: 0;
+}
+
+.characters_list li {
+  padding: 20px;
+  border: 1px solid rgba(14, 24, 109, 0.5); 
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(240, 248, 255, 0.9), rgba(220, 235, 255, 0.7));
+  box-shadow: 0 6px 15px rgba(0, 0, 100, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.characters_list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 0, 100, 0.25);
+}
+
+.characters_list h2 {
+  color: rgb(0, 102, 204);
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.code-block {
+  background: linear-gradient(145deg, rgba(240, 248, 255, 0.95), rgba(220, 235, 255, 0.85));
+  border-left: 4px solid rgb(0, 102, 204);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  box-shadow: 0 6px 18px rgba(0, 0, 100, 0.1);
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(14, 24, 109);
+  overflow-x: auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.code-block pre {
+  margin: 0;
+}
+
+.code-block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 100, 0.2);
+}
+
+.code-block code {
+  display: block;
+  white-space: pre-wrap; /* перенос длинных строк */
+}

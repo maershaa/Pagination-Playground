@@ -1,0 +1,32 @@
+.title{
+  color: rgb(0, 160, 90);
+}
+
+.info-text {
+  background: linear-gradient(
+    135deg,
+    rgba(220, 245, 230, 0.9),
+    rgba(240, 255, 246, 0.95)
+  );
+  border-left: 4px solid rgb(0, 160, 90); /* насыщенный зелёный */
+  padding: 16px 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  color: rgb(20, 70, 45);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 90%; 
+  box-shadow: 0 4px 12px rgba(0, 160, 90, 0.15);
+}
+
+.info-text strong {
+  color: rgb(0, 160, 90);
+}
+
+.info-text code {
+  background-color: rgba(0, 160, 90, 0.12);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: rgb(0, 110, 65);
+}
