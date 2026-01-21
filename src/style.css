@@ -129,3 +129,51 @@ footer a {
 footer a:hover {
   color: #2563eb;
 }
+
+
+.back-wrapper {
+  text-align: center;
+  margin: 32px 0;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: rgb(74, 77, 160);
+  border: 2px solid rgb(74, 77, 160);
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(235, 238, 255, 0.95),
+    rgba(245, 247, 255, 1)
+  );
+
+  box-shadow: 0 6px 16px rgba(74, 77, 160, 0.25);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.25s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(
+    135deg,
+    rgba(220, 225, 255, 1),
+    rgba(235, 238, 255, 1)
+  );
+  box-shadow: 0 10px 24px rgba(74, 77, 160, 0.35);
+}
+
+.back-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 12px rgba(74, 77, 160, 0.25);
+}

@@ -8,7 +8,7 @@
     rgba(220, 245, 230, 0.9),
     rgba(240, 255, 246, 0.95)
   );
-  border-left: 4px solid rgb(0, 160, 90); /* насыщенный зелёный */
+  border-left: 4px solid rgb(0, 160, 90);
   padding: 16px 20px;
   margin: 20px auto;
   border-radius: 8px;
@@ -17,10 +17,17 @@
   line-height: 1.6;
   max-width: 90%; 
   box-shadow: 0 4px 12px rgba(0, 160, 90, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
 }
 
 .info-text strong {
   color: rgb(0, 160, 90);
+}
+
+.info-text:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 160, 90, 0.2);
 }
 
 .info-text code {
@@ -29,4 +36,75 @@
   border-radius: 4px;
   font-family: monospace;
   color: rgb(0, 110, 65);
+}
+
+
+
+.characters_list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: 0;
+}
+
+.characters_list li {
+  padding: 20px;
+  border: 1px solid rgba(0, 160, 90, 0.5);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(240, 248, 255, 0.9), rgba(220, 235, 255, 0.7));
+  box-shadow: 0 6px 15px rgba(0, 160, 90, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.characters_list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 160, 90, 0.25);
+}
+
+.characters_list h2 {
+  color: rgb(0, 110, 65);
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Пагинация */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.pagination a {
+  color: rgb(20, 70, 45);
+  padding: 8px 14px;
+  margin: 0 4px;
+  text-decoration: none;
+  border: 1px solid rgb(20, 70, 45);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: rgb(20, 70, 45);
+  color: white;
+}
+
+.pagination a.active {
+  background-color: rgb(20, 70, 45);
+  color: white;
+  cursor: default;
+}
+
+.pagination a.prev,
+.pagination a.next {
+  font-weight: bold;
+}
+
+.pagination a.prev.disabled,
+.pagination a.next.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
