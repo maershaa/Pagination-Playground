@@ -1,1 +1,0 @@
-import"./style-Cnqn1yj1.js";import{f as t,c}from"./fetchCharacter-pWbMUoXa.js";const s=document.querySelector(".characters_list-js");let o=1;async function n(){try{const e=await t(o);console.log("🚀 ~ renderCharacters ~ data:",e);const r=e.docs.map(a=>c(a));s.insertAdjacentElement("beforeend",r)}catch(e){console.log(e.message)}}n();

@@ -5,15 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classic pagination by page</title>
-  <script type="module" crossorigin src="/Pagination-Playground/assets/classicPagination-DlfLxy4G.js"></script>
-  <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/style-Cnqn1yj1.js">
-  <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/fetchCharacter-pWbMUoXa.js">
-  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/style-Dv91Cenj.css">
-  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/classicPagination-CJ_dGO-T.css">
+  <script type="module" crossorigin src="/Pagination-Playground/assets/classicPagination-VeDktwdw.js"></script>
+  <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/style-BXua0nER.js">
+  <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/createCharacterMarkup-CIPodCG6.js">
+  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/style-xASkzRT7.css">
+  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/classicPagination-GrB7gKdi.css">
 </head>
 
 <body>
-  <p><a href="index.html">Go back</a></p>
+<p class="back-wrapper">
+  <a href="index.html" class="back-btn">← Go back</a>
+</p>
 
 <h1 class="title">Classic pagination by page</h1>
 
@@ -33,6 +35,13 @@
 </p>
 
     <ul class="characters_list characters_list-js list"></ul>
+
+<div class="pagination">
+  <a href="#" class="prev">&laquo;</a>
+  <span class="pages"></span> <!-- сюда будут вставляться кнопки страниц -->
+  <a href="#" class="next">&raquo;</a>
+</div>
+
 
 
 </body>
