@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Load more pagination</title>
-  <script type="module" crossorigin src="/Pagination-Playground/assets/loadMorePagination-h7neLVFH.js"></script>
-  <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/style-jDmJTPYY.js">
-  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/style-BemOqHVA.css">
-  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/loadMorePagination-Ci3MYyJC.css">
+  <script type="module" crossorigin src="/Pagination-Playground/assets/loadMorePagination-Fr453Pwl.js"></script>
+  <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/style-Cnqn1yj1.js">
+  <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/fetchCharacter-pWbMUoXa.js">
+  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/style-Dv91Cenj.css">
+  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/loadMorePagination-Cwm0sh1X.css">
 </head>
 
 <body>
@@ -18,6 +19,24 @@
 
 
    <h1 class="title"> Load more pagination  </h1>
+   <p class="info-text">
+  <strong>Пагинация через кнопку Load More:</strong><br><br>
+
+  Такой подход используется, когда данные загружаются порциями по страницам, 
+  а пользователь сам инициирует подгрузку следующей части контента.<br><br>
+
+  При клике на кнопку <strong>Load More</strong>:
+  <br>
+  — увеличивается номер текущей страницы (<code>currentPage</code>);<br>
+  — отправляется запрос на сервер с параметром страницы;<br>
+  — полученные данные добавляются в конец уже существующего списка, 
+  без перезагрузки страницы.<br><br>
+
+  Когда достигнута последняя страница, кнопку обычно скрывают или отключают, 
+  чтобы предотвратить лишние запросы к серверу.
+</p>
+
+
     <ul class="characters_list characters_list-js list"></ul>
 
     <button class="loadMoreBtn loadMoreBtn-js is-hidden">Load More</button>

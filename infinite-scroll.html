@@ -5,12 +5,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Infinite Scroll</title>
+  <script type="module" crossorigin src="/Pagination-Playground/assets/infiniteScroll-BjPXW5gf.js"></script>
+  <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/style-Cnqn1yj1.js">
+  <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/fetchCharacter-pWbMUoXa.js">
+  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/style-Dv91Cenj.css">
+  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/infiniteScroll-u5hv1hHF.css">
 </head>
 
 <body>
   <p><a href="index.html">Go back</a></p>
-   <h1 class="title"> Infinite Scroll  </h1>
+  <h1 class="title"> Infinite Scroll </h1>
+
+  <p class="info-text">
+    <strong>Intersection Observer API — </strong>
+    это современный веб-API, который позволяет отслеживать, когда элемент появляется или исчезает из области видимости
+    (viewport) без постоянной проверки через скролл-события.
+  </p>
+
+  <p class="info-text">
+    <strong>Инициализация и использование:</strong><br><br>
+    Чтобы создать Observer, вызываем конструктор:
+    <code>const observer = new IntersectionObserver(callback, options);</code>.<br>
+    - <strong>callback</strong> — функция, которая будет вызываться при пересечении наблюдаемых элементов.<br>
+    - <strong>options</strong> — объект с настройками: <code>root</code> (область просмотра), <code>rootMargin</code>
+    (отступы) и <code>threshold</code> (порог срабатывания).<br>
+    После этого добавляем элементы для отслеживания через <code>observer.observe(element)</code>.<br>
+    Когда этот конкретный элемент больше не нужен, можно вызвать <code>observer.unobserve(element)</code>, а когда Observer полностью не
+    нужен и мы хотим перестать наблюдать <em>все</em> элементы — <code>observer.disconnect()</code>.
+  </p>
+  
+<div class="code-block"><pre><code>
+// Настройки Observer
+const options = {
+  root: null, // Корневой элемент для наблюдения (viewport)
+  rootMargin: '0px 0px 300px 0px', // Смещение, чтобы срабатывать раньше снизу
+  threshold: 1.0, // 0 = элемент хоть немного виден, 1 = полностью виден
+};
+// Функция обратного вызова
+const callback = function (entries, observer) {
+  entries.forEach(entry => {
+    // entry — информация о наблюдаемом элементе
+    // entry.isIntersecting — true, если элемент виден
+    // entry.target — сам элемент
+    // observer — можно управлять наблюдением:
+    // observer.unobserve(entry.target) — перестать отслеживать элемент
+    // observer.disconnect() — отключить observer полностью
+
+    if (entry.isIntersecting) {
+      console.log('Элемент виден:', entry.target);
+      // Здесь можно подгружать контент или запускать анимацию
+    }
+  });
+};
+// Создаём Observer
+const observer = new IntersectionObserver(callback, options);
+// Начинаем наблюдать
+const target = document.querySelector('.js-guard');
+observer.observe(target);
+  </code></pre>
+</div>
+
+
+  <ul class="characters_list characters_list-js list"></ul>
+
+  <div class="js-guard"></div> <!-- для Observer -->
 
 </body>
 
 </html>
+
+
