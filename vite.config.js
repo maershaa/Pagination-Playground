@@ -4,7 +4,6 @@ import { resolve } from 'path';
 export default defineConfig({
   base: '/Pagination-Playground/',
 
-  // Если многостраничный сайт
   build: {
     rollupOptions: {
       input: {

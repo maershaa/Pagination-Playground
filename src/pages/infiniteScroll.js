@@ -1,0 +1,8 @@
+const options = {
+  root: null,
+  rootMargin: "0px",
+  scrollMargin: "0px",
+  threshold: 1.0,
+};
+
+const observer = new IntersectionObserver(callback, options);
