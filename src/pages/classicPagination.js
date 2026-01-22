@@ -15,6 +15,7 @@ let totalCharacters;
 async function renderCharacters() {
   try {
     const data = await fetchCharacter(currentPage);
+    console.log("🚀 ~ renderCharacters ~ currentPage:", currentPage);
     totalPages = data.pages;
     totalCharacters = data.total;
     // console.log("🚀 ~ renderCharacters ~ data:", data);
@@ -33,25 +34,53 @@ async function renderCharacters() {
 renderCharacters();
 
 function renderPagination() {
+  const visiblePages = 1; // сколько страниц показываем слева и справа
   let pagesMarkup = '';
 
-  for (let i = 1; i <= totalPages; i++) {
-    pagesMarkup += `<a href="#" class="${i === currentPage ? 'active' : ''}">${i}</a>`;
-  }
-  pagesContainer.innerHTML = pagesMarkup;
+  const startPage = Math.max(2, currentPage - visiblePages);
+  const endPage = Math.min(totalPages - 1, currentPage + visiblePages);
 
-  // Отключаем Prev/Next на границах
+  // Prev / Next
   const prevBtn = paginationEl.firstElementChild;
   const nextBtn = paginationEl.lastElementChild;
+
   prevBtn.classList.toggle('disabled', currentPage === 1);
   nextBtn.classList.toggle('disabled', currentPage === totalPages);
+
+  // Первая страница
+  pagesMarkup += `<a href="#" class="${currentPage === 1 ? 'active' : ''}">1</a>`;
+
+  // Многоточие слева
+  if (startPage > 2) {
+    pagesMarkup += `<span class="dots">...</span>`;
+  }
+
+  // Центральные страницы
+  for (let i = startPage; i <= endPage; i++) {
+    pagesMarkup += `<a href="#" class="${i === currentPage ? 'active' : ''}">${i}</a>`;
+  }
+
+  // Многоточие справа
+  if (endPage < totalPages - 1) {
+    pagesMarkup += `<span class="dots">...</span>`;
+  }
+
+  // Последняя страница
+  if (totalPages > 1) {
+    pagesMarkup += `<a href="#" class="${currentPage === totalPages ? 'active' : ''}">${totalPages}</a>`;
+  }
+
+  pagesContainer.innerHTML = pagesMarkup;
 }
+
+
 
 paginationEl.addEventListener('click', onPaginationClick);
 
 function onPaginationClick(evt) {
   evt.preventDefault();
   const target = evt.target;
+  console.log("🚀 ~ onPaginationClick ~ evt.target.textContent:", evt.target.textContent);
 
   if (target.classList.contains('disabled')) return;
 
