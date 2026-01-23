@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Search with Pagination</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="back-wrapper">
+        <a href="index.html" class="back-btn">← Go back</a>
+      </nav>
+
+      <h1 class="title">Image Search with Pagination</h1>
+
+      <p class="info-text">
+        <strong>Приложение для поиска изображений — </strong>
+        делает запросы к
+        <a href="https://pixabay.com/api/docs/" target="_blank" rel="noopener noreferrer">
+          Pixabay API
+        </a>
+        для получения изображений по ключевым словам. API поддерживает параметры
+        <code>page</code> и <code>per_page</code> для пагинации.
+      </p>
+
+      <p class="info-text">
+        Реализована <strong> классическая пагинация с выделением активной страницы </strong>.
+        Для удобства пользователя одновременно отображается ограниченное окно ссылок на страницы — максимум 10.
+        Если всего страниц больше 10, окно автоматически сдвигается так, чтобы текущая страница была примерно по центру.
+        При достижении начала или конца диапазона отображаются корректные границы, чтобы первая и последняя страницы
+        всегда
+        были доступны.
+      </p>
+
+
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <h2 class="subtitle">Enter text and generate unique images instantly</h2>
+
+      <section class="section">
+        <form class="search-form" id="search-form">
+          <input type="text" name="searchQuery" autocomplete="off" placeholder="Search images..."
+            aria-label="Search images" />
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <section class="section">
+        <div class="gallery"></div>
+
+        <!-- <button type="button" class="load-more">Load more</button> -->
+        <!-- или -->
+        <!-- <div class="infinityScroll-js"> </div> -->
+        <div class="pagination pagination-js">
+        </div>
+
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Image Search</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/pages/ImgSearchPagination.js"></script>
+</body>
+
+
+
+</html>

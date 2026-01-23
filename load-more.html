@@ -8,36 +8,36 @@
 </head>
 
 <body>
-<p class="back-wrapper">
-  <a href="index.html" class="back-btn">← Go back</a>
-</p>
+  <nav class="back-wrapper">
+    <a href="index.html" class="back-btn">← Go back</a>
+  </nav>
 
 
 
-   <h1 class="title"> Load more pagination  </h1>
-   <p class="info-text">
-  <strong>Пагинация через кнопку Load More:</strong><br><br>
+  <h1 class="title"> Load more pagination </h1>
+  <p class="info-text">
+    <strong>Пагинация через кнопку Load More:</strong><br><br>
 
-  Такой подход используется, когда данные загружаются порциями по страницам, 
-  а пользователь сам инициирует подгрузку следующей части контента.<br><br>
+    Такой подход используется, когда данные загружаются порциями по страницам,
+    а пользователь сам инициирует подгрузку следующей части контента.<br><br>
 
-  При клике на кнопку <strong>Load More</strong>:
-  <br>
-  — увеличивается номер текущей страницы (<code>currentPage</code>);<br>
-  — отправляется запрос на сервер с параметром страницы;<br>
-  — полученные данные добавляются в конец уже существующего списка, 
-  без перезагрузки страницы.<br><br>
+    При клике на кнопку <strong>Load More</strong>:
+    <br>
+    — увеличивается номер текущей страницы (<code>currentPage</code>);<br>
+    — отправляется запрос на сервер с параметром страницы;<br>
+    — полученные данные добавляются в конец уже существующего списка,
+    без перезагрузки страницы.<br><br>
 
-  Когда достигнута последняя страница, кнопку обычно скрывают или отключают, 
-  чтобы предотвратить лишние запросы к серверу.
-</p>
+    Когда достигнута последняя страница, кнопку обычно скрывают или отключают,
+    чтобы предотвратить лишние запросы к серверу.
+  </p>
 
 
-    <ul class="characters_list characters_list-js list"></ul>
+  <ul class="characters_list characters_list-js list"></ul>
 
-    <button class="loadMoreBtn loadMoreBtn-js is-hidden">Load More</button>
+  <button class="loadMoreBtn loadMoreBtn-js is-hidden">Load More</button>
 
-<script type="module" src="/src/pages/loadMore.js"></script>
+  <script type="module" src="/src/pages/loadMore.js"></script>
 
 </body>
 

@@ -8,11 +8,11 @@
 </head>
 
 <body>
-<p class="back-wrapper">
-  <a href="index.html" class="back-btn">← Go back</a>
-</p>
+  <nav class="back-wrapper">
+    <a href="index.html" class="back-btn">← Go back</a>
+  </nav>
 
-<h1 class="title"> Infinite Scroll </h1>
+  <h1 class="title"> Infinite Scroll </h1>
 
   <p class="info-text">
     <strong>Intersection Observer API — </strong>
@@ -28,11 +28,13 @@
     - <strong>options</strong> — объект с настройками: <code>root</code> (область просмотра), <code>rootMargin</code>
     (отступы) и <code>threshold</code> (порог срабатывания).<br>
     После этого добавляем элементы для отслеживания через <code>observer.observe(element)</code>.<br>
-    Когда этот конкретный элемент больше не нужен, можно вызвать <code>observer.unobserve(element)</code>, а когда Observer полностью не
+    Когда этот конкретный элемент больше не нужен, можно вызвать <code>observer.unobserve(element)</code>, а когда
+    Observer полностью не
     нужен и мы хотим перестать наблюдать <em>все</em> элементы — <code>observer.disconnect()</code>.
   </p>
-  
-<div class="code-block"><pre><code>
+
+  <div class="code-block">
+    <pre><code>
 // Настройки Observer
 const options = {
   root: null, // Корневой элемент для наблюдения (viewport)
@@ -61,7 +63,7 @@ const observer = new IntersectionObserver(callback, options);
 const target = document.querySelector('.js-guard');
 observer.observe(target);
   </code></pre>
-</div>
+  </div>
 
 
   <ul class="characters_list characters_list-js list"></ul>
@@ -72,5 +74,3 @@ observer.observe(target);
 </body>
 
 </html>
-
-

@@ -11,6 +11,7 @@ export default defineConfig({
         classicPagination: resolve(__dirname, 'pagination-page.html'),
         loadMorePagination: resolve(__dirname, 'load-more.html'),
         infiniteScroll: resolve(__dirname, 'infinite-scroll.html'),
+        imgSearchWithPagination: resolve(__dirname, 'imgSearchWithPagination.html')
       },
     },
   },
