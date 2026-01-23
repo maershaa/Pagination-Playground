@@ -5,69 +5,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Classic pagination by page</title>
-  <script type="module" crossorigin src="/Pagination-Playground/assets/classicPagination-CeLuv1xw.js"></script>
-  <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/style-BXua0nER.js">
+  <script type="module" crossorigin src="/Pagination-Playground/assets/classicPagination-BYplHvWp.js"></script>
+  <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/style-CqgSiHNI.js">
   <link rel="modulepreload" crossorigin href="/Pagination-Playground/assets/createCharacterMarkup-CIPodCG6.js">
-  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/style-xASkzRT7.css">
+  <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/style-ddWeuMPB.css">
   <link rel="stylesheet" crossorigin href="/Pagination-Playground/assets/classicPagination-CoJeORJg.css">
 </head>
 
 <body>
-<p class="back-wrapper">
-  <a href="index.html" class="back-btn">← Go back</a>
-</p>
+  <nav class="back-wrapper">
+    <a href="index.html" class="back-btn">← Go back</a>
+  </nav>
 
-<h1 class="title">Classic pagination by page</h1>
+  <h1 class="title">Classic pagination by page</h1>
 
-<p class="info-text info-text">
-  <strong>Классическая постраничная пагинация — </strong> это подход, при котором внизу страницы
-  отображаются элементы управления с номерами страниц
-  (1, 2, 3, …), а пользователь самостоятельно выбирает нужную страницу.<br><br>
+  <p class="info-text info-text">
+    <strong>Классическая постраничная пагинация — </strong> это подход, при котором внизу страницы
+    отображаются элементы управления с номерами страниц
+    (1, 2, 3, …), а пользователь самостоятельно выбирает нужную страницу.<br><br>
 
-  При клике на номер страницы:
-  <br>
-  — в запрос передаётся выбранный номер страницы;<br>
-  — текущий список данных очищается;<br>
-  — загружается и отображается новый набор данных, соответствующий выбранной странице.<br><br>
+    При клике на номер страницы:
+    <br>
+    — в запрос передаётся выбранный номер страницы;<br>
+    — текущий список данных очищается;<br>
+    — загружается и отображается новый набор данных, соответствующий выбранной странице.<br><br>
 
-  Активная страница визуально выделяется, а кнопки перехода могут дополняться
-  элементами <strong>Next</strong> / <strong>Prev</strong> для удобной навигации.
-</p>
-
-
-<p class="info-text">
-<strong> Реализация пагинации построена по принципу «оконного» отображения страниц. 
- </strong> 
- Это вариант классической постраничной пагинации,оптимизированный для работы с большим количеством страниц.<br><br>
-
-  Пользователь всегда видит:
-  <br>
-  — первую страницу списка;<br>
-  — последнюю страницу списка;<br>
-  — текущую страницу и по одной странице слева и справа от неё (всего до трёх центральных страниц).<br><br>
-
-  Если между отображаемыми страницами существуют пропущенные диапазоны,
-  они обозначаются символами <strong>...</strong>, что позволяет сохранить компактный и понятный интерфейс
-  даже при наличии сотен страниц.<br><br>
-
-  При клике на номер страницы:
-  <br>
-  — обновляется текущий номер страницы;<br>
-  — выполняется запрос к бекенду с новым номером страницы;<br>
-  — предыдущий список данных заменяется новым набором элементов;<br>
-  — активная страница визуально выделяется для удобства навигации.
-</p>
+    Активная страница визуально выделяется, а кнопки перехода могут дополняться
+    элементами <strong>Next</strong> / <strong>Prev</strong> для удобной навигации.
+  </p>
 
 
+  <p class="info-text">
+    <strong> Реализация пагинации построена по принципу «оконного» отображения страниц.
+    </strong>
+    Это вариант классической постраничной пагинации,оптимизированный для работы с большим количеством страниц.<br><br>
 
-    <ul class="characters_list characters_list-js list"></ul>
+    Пользователь всегда видит:
+    <br>
+    — первую страницу списка;<br>
+    — последнюю страницу списка;<br>
+    — текущую страницу и по одной странице слева и справа от неё (всего до трёх центральных страниц).<br><br>
 
-    
-<div class="pagination">
-  <a href="#" class="prev">&laquo;</a>
-  <span class="pages"></span> <!-- сюда будут вставляться кнопки страниц -->
-  <a href="#" class="next">&raquo;</a>
-</div>
+    Если между отображаемыми страницами существуют пропущенные диапазоны,
+    они обозначаются символами <strong>...</strong>, что позволяет сохранить компактный и понятный интерфейс
+    даже при наличии сотен страниц.<br><br>
+
+    При клике на номер страницы:
+    <br>
+    — обновляется текущий номер страницы;<br>
+    — выполняется запрос к бекенду с новым номером страницы;<br>
+    — предыдущий список данных заменяется новым набором элементов;<br>
+    — активная страница визуально выделяется для удобства навигации.
+  </p>
+
+
+
+  <ul class="characters_list characters_list-js list"></ul>
+
+
+  <div class="pagination">
+    <a href="#" class="prev">&laquo;</a>
+    <span class="pages"></span> <!-- сюда будут вставляться кнопки страниц -->
+    <a href="#" class="next">&raquo;</a>
+  </div>
 
 
 
