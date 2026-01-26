@@ -4,6 +4,9 @@ import '../styles/ImgSearch.css';
 import { createPhotoMarkup } from '../utils/createPhotoMarkup.js';
 import { fetchPhotos } from '../utils/fetchPhotos.js';
 
+import { Fancybox } from '@fancyapps/ui/dist/fancybox/';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+
 const searchForm = document.querySelector('#search-form');
 const galleryContainer = document.querySelector('.gallery');
 const pagesContainer = document.querySelector('.pagination-js');
@@ -43,6 +46,7 @@ function onSearchFormSubmit(evt) {
 async function renderPhotos() {
   try {
     const data = await fetchPhotos(currentQuery, currentPage);
+    console.log('🚀 ~ renderPhotos ~ data:', data);
     const photos = data.hits;
 
     if (!photos.length) {
@@ -127,4 +131,18 @@ function clearGallery() {
 
 function clearPagination() {
   pagesContainer.innerHTML = '';
+}
+
+// Для прсомотра галлереи используем библиотеку
+galleryContainer.addEventListener('click', onImgClick);
+function onImgClick(evt) {
+  Fancybox.bind('[data-fancybox="gallery"]', {
+    Carousel: {
+      formatCaption: (carouselRef, slide) => {
+        return `${slide.index + 1} of ${carouselRef.getSlides().length}<br /> ${
+          slide.caption || ''
+        }`;
+      },
+    },
+  });
 }
