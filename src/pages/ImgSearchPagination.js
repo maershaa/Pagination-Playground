@@ -57,12 +57,16 @@ async function renderPhotos() {
       Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.',
       );
-
       return;
     }
 
     totalPages = Math.ceil(data.totalHits / PHOTOS_PER_PAGE);
-    Notify.info(`Hooray! We found ${data.totalHits} images.`);
+
+    if (currentPage === 1) {
+      Notify.info(
+        `Hooray! We found ${data.totalHits} images for "${currentQuery}".`,
+      );
+    }
 
     const markup = photos.map((photo) => createPhotoMarkup(photo));
     galleryContainer.insertAdjacentHTML('beforeend', markup.join(''));
