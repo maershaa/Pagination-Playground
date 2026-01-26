@@ -10,7 +10,8 @@ function createPhotoMarkup(photo) {
     downloads = 0,
   } = photo;
   const caption = tags.split(',')[0].trim();
-  return `<div class="photo-card" data-id=${id}>
+  return `
+  <div class="photo-card" data-id="${id}">
       <a  href="${largeImageURL}"  data-fancybox="gallery" data-caption="${caption}">
       <img src="${webformatURL}" alt="${tags}" loading="lazy" />
       </a>
