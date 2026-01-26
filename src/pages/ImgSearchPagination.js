@@ -7,6 +7,9 @@ import { fetchPhotos } from '../utils/fetchPhotos.js';
 import { Fancybox } from '@fancyapps/ui/dist/fancybox/';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import 'notiflix/dist/notiflix-3.2.8.min.css';
+
 const searchForm = document.querySelector('#search-form');
 const galleryContainer = document.querySelector('.gallery');
 const pagesContainer = document.querySelector('.pagination-js');
@@ -30,7 +33,7 @@ function onSearchFormSubmit(evt) {
   if (!searchQuery) return;
 
   if (searchQuery.length > MAX_QUERY_LENGTH) {
-    alert('Это значение не может превышать 100 символов');
+    Notify.warning('This value cannot be longer than 100 characters');
     return;
   }
 
@@ -46,19 +49,20 @@ function onSearchFormSubmit(evt) {
 async function renderPhotos() {
   try {
     const data = await fetchPhotos(currentQuery, currentPage);
-    console.log('🚀 ~ renderPhotos ~ data:', data);
     const photos = data.hits;
 
     if (!photos.length) {
       clearGallery();
       clearPagination();
-      alert(
+      Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.',
       );
+
       return;
     }
 
     totalPages = Math.ceil(data.totalHits / PHOTOS_PER_PAGE);
+    Notify.info(`Hooray! We found ${data.totalHits} images.`);
 
     const markup = photos.map((photo) => createPhotoMarkup(photo));
     galleryContainer.insertAdjacentHTML('beforeend', markup.join(''));
